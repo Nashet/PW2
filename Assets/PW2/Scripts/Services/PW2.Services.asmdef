@@ -1,0 +1,16 @@
+{
+    "name": "PW2.Services",
+    "references": [
+        "GUID:bc3f05c9f695dbd40b15af75c6b71f3c",
+        "GUID:dc473016ec2bf8b4cbf849d25dd8a62f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
