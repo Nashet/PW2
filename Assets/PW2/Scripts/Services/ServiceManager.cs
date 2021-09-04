@@ -2,13 +2,14 @@
 using PW2.Scripts.CommonUtilities;
 using PW2.Scripts.Services.Interfaces;
 
-
 namespace PW2.Scripts.Services
 {
 	public class ServiceManager : Singleton<ServiceManager>
 	{
 		private readonly List<IService> services = new List<IService>();
 		private static bool initialized = false;
+		//[Inject] private readonly ILogService logService;
+		
 		public ServiceManager()
 		{
 			//_requestManager = new RequestManager();
@@ -21,6 +22,7 @@ namespace PW2.Scripts.Services
 			Add<LogService>();
 			initialized = true;
 			//_ready = true;
+			//logService.Log("Is done");
 		}
 
 		public T Get<T>() where T : class, IService
