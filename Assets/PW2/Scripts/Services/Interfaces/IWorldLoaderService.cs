@@ -1,8 +1,8 @@
 ﻿namespace PW2.Scripts.Services.Interfaces
 {
-	public interface IWorldLoaderService
+	public interface IWorldGeneratorService
 	{
-		bool GetTestWorld();
+		
 	}
 	
 	public interface ILogService

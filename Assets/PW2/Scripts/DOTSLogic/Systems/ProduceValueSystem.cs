@@ -1,4 +1,5 @@
-﻿using PW2.Scripts.DOTSLogic.Components;
+﻿using System;
+using PW2.Scripts.DOTSLogic.Components;
 using Unity.Burst;
 using Unity.Entities;
 
@@ -13,10 +14,9 @@ namespace PW2.Scripts.DOTSLogic.Systems
 				.ForEach((ref StorageComponent storage, in ProductionComponent production, in PopulationComponent population) =>
 				{
 					var produced = population.PopulationSize * production.ProductionRate;
-					storage.ProductType = production.ProductType;
-					storage.Amount += produced;
-				})
+                  //  storage.Add(production.Product, produced);
+                })
 				.ScheduleParallel();
 		}
-	}
+    }
 }

@@ -7,15 +7,7 @@ namespace PW2.Scripts.Services
 	{
 		public void Log(string text)
 		{
-			Debug.LogError(text);
+			Debug.Log(text);
 		}
 	}
-	// public class TestInstaller : MonoInstaller
-	// {
-	// 	public override void InstallBindings()
-	// 	{
-	// 		Container.Bind<string>().FromInstance("Hello World!");
-	// 		Container.Bind<Greeter>().AsSingle().NonLazy();
-	// 	}
-	// }
 }

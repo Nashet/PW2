@@ -1,7 +1,8 @@
 {
     "name": "PW2.Models",
-    "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:dc473016ec2bf8b4cbf849d25dd8a62f"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -1,7 +1,8 @@
 {
     "name": "PW2.Application",
     "references": [
-        "GUID:cc5c7d23f7107cb4d9b61ad8d73098ff"
+        "GUID:cc5c7d23f7107cb4d9b61ad8d73098ff",
+        "GUID:dc473016ec2bf8b4cbf849d25dd8a62f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

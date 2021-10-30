@@ -2,7 +2,6 @@
 {
     public class Singleton<T> where T : new()
     {
-        public int f;
         private static T singleton;
         public static T Instance
         {

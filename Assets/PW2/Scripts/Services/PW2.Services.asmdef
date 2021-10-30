@@ -1,9 +1,11 @@
 {
     "name": "PW2.Services",
     "references": [
-        "GUID:bc3f05c9f695dbd40b15af75c6b71f3c",
         "GUID:dc473016ec2bf8b4cbf849d25dd8a62f",
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:5f0e9bd5a52b90b4c9996a685ac48c66",
+        "GUID:734d92eba21c94caba915361bd5ac177",
+        "GUID:6ab47fe2a152d264f8e4d3d5e66ac729"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
