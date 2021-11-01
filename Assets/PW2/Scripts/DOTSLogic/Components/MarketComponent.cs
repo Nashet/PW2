@@ -1,5 +1,4 @@
 ﻿using System;
-//using Unity.Collections;
 using Unity.Entities;
 
 namespace PW2.Scripts.DOTSLogic.Components
@@ -7,18 +6,11 @@ namespace PW2.Scripts.DOTSLogic.Components
     [Serializable]
     public struct MarketComponent : IComponentData
     {
-        public int trades;
-        //public readonly NativeArray<Single> Prices;
-        public float Rt;
-        //public NativeList<float> df;
-        public MarketComponent(float[] prices)
+        public int delData;
+        public MarketComponent(int none)
         {
-            //df = new NativeList<float>();
-            //Prices = prices; 
-            Rt = 3;
-            // has = new NativeHashMap<byte, decimal>();
-            // Add(type, amount);
-            trades = 0;
+            delData = 42;
+
         }
     }
 }

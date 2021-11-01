@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using PW2;
-using PW2.Scripts.CommonUtilities;
-using PW2.Scripts.DOTSLogic.Components;
-using PW2.Scripts.Services;
+﻿using PW2.Scripts.DOTSLogic.Components;
 using PW2.Scripts.Services.Interfaces;
-using Unity.Collections;
 using Unity.Entities;
 
 namespace PW2.Scripts.Services
@@ -13,7 +7,6 @@ namespace PW2.Scripts.Services
     public class WorldGeneratorService : SystemBase, IWorldGeneratorService, IService
     {
         private static bool needToGenerate = false;
-
 
         public void Generate()
         {
@@ -49,9 +42,28 @@ namespace PW2.Scripts.Services
         {
             var country = EntityManager.CreateEntity();
             EntityManager.AddComponentData(country, new CountryComponent());
-            EntityManager.AddComponentData(country, new MarketComponent(new float[3]{1f, 1f, 1f}));
+            CreateMarket(country);
             EntityManager.SetName(country, "Country");
             return country;
+        }
+
+        private void CreateMarket(Entity entity)
+        {
+            var market = new MarketComponent();
+            EntityManager.AddComponentData(entity, market);
+            EntityManager.SetComponentData ( entity, market ) ;
+            //CreateStorage(entity);
+        }
+
+        private void CreateStorage(Entity entity)
+        {
+            EntityManager.AddComponentData(entity, new StorageComponent());
+            EntityManager.AddBuffer <StorageElement> ( entity ) ;
+            // Add some items
+            var items = EntityManager.GetBuffer<StorageElement>(entity);
+            items.Add(new StorageElement("Sword"));
+            items.Add(new StorageElement("Shield"));
+            items.Add(new StorageElement("Coins"));
         }
 
         private Entity GenerateProvince(int provinceId, int countryId, Entity parent)
@@ -67,10 +79,11 @@ namespace PW2.Scripts.Services
         {
             var pop = EntityManager.CreateEntity();
             EntityManager.AddComponentData(pop, new PopulationComponent {PopulationSize = 1000});
-            EntityManager.AddComponentData(pop, new StorageComponent());
+            
             EntityManager.AddComponentData(pop, new ProductionComponent());
             EntityManager.AddComponentData(pop, new ParentComponent {Id = provinceId, Parent = parent});
             EntityManager.SetName(pop, "Pop");
+            CreateStorage(pop);
             // EntityManager.AddComponentData(pop, new ProductionComponent {Product = Product.allProducts.Random(), ProductionRate = 0.002m});
             //logService.Log("created entity " + entity.Index);
             //ServiceManager.Instance.Get<LogService>()
