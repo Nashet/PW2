@@ -9,11 +9,11 @@ namespace PW2.Scripts.DOTSLogic.Components
     [Serializable]
     public struct StorageComponent : IComponentData
     {
-        public readonly NativeArray<decimal> Items;  
+        //public readonly NativeArray<decimal> Items;  
 
         public StorageComponent(Product type, decimal amount)
         {
-            Items = new NativeArray<decimal>(34, Allocator.Persistent);
+            //Items = new NativeArray<decimal>(34, Allocator.Persistent);
             
             // has = new NativeHashMap<byte, decimal>();
             // Add(type, amount);

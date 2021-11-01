@@ -52,10 +52,10 @@ namespace PW2.Scripts.DOTSLogic.Systems
                 {
                     var prov = owner[province.Parent];
 
-                    var country = marketGetter[prov.Parent];
+                    var market = marketGetter[prov.Parent];
 
-                    country.trades = country.trades++;
-                    Debug.LogError(country);
+                    market.trades = market.trades++;
+                   // Debug.LogError("Trade is" + market.trades.ToString());
 
                 })
                 .Schedule();
