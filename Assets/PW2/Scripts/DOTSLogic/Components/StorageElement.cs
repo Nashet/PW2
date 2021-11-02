@@ -6,17 +6,15 @@ namespace PW2.Scripts.DOTSLogic.Components
     public struct StorageElement : IBufferElementData
     { 
         public readonly FixedString64 Id;
-        public int Count;
-        public int delData;
-         
-        public StorageElement(string id) {
+        public decimal Amount;
+
+        public StorageElement(FixedString64 id) {
             this.Id = id;
-            this.Count = 1;
-            delData = 7;
+            this.Amount = 1;
         }
  
-        public StorageElement(string id, int count)  : this(id){
-            this.Count = count;
+        public StorageElement(FixedString64 id, decimal count)  : this(id){
+            this.Amount = count;
         }
     }
 }

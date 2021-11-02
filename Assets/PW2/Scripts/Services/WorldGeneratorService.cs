@@ -1,4 +1,6 @@
-﻿using PW2.Scripts.DOTSLogic.Components;
+﻿using System;
+using System.Linq;
+using PW2.Scripts.DOTSLogic.Components;
 using PW2.Scripts.Services.Interfaces;
 using Unity.Entities;
 
@@ -59,11 +61,11 @@ namespace PW2.Scripts.Services
         {
             EntityManager.AddComponentData(entity, new StorageComponent());
             EntityManager.AddBuffer <StorageElement> ( entity ) ;
-            // Add some items
-            var items = EntityManager.GetBuffer<StorageElement>(entity);
-            items.Add(new StorageElement("Sword"));
-            items.Add(new StorageElement("Shield"));
-            items.Add(new StorageElement("Coins"));
+            // Add some items to storage
+            // var items = EntityManager.GetBuffer<StorageElement>(entity);
+            // items.Add(new StorageElement("Sword"));
+            // items.Add(new StorageElement("Shield"));
+            // items.Add(new StorageElement("Coins"));
         }
 
         private Entity GenerateProvince(int provinceId, int countryId, Entity parent)
@@ -79,8 +81,11 @@ namespace PW2.Scripts.Services
         {
             var pop = EntityManager.CreateEntity();
             EntityManager.AddComponentData(pop, new PopulationComponent {PopulationSize = 1000});
+
+            var array = Enum.GetValues(typeof(Products));
+            var randomProduct = array.GetValue(UnityEngine.Random.Range(0, array.Length - 1));
             
-            EntityManager.AddComponentData(pop, new ProductionComponent());
+            EntityManager.AddComponentData(pop, new ProductionComponent(0.001m, (Products)randomProduct));
             EntityManager.AddComponentData(pop, new ParentComponent {Id = provinceId, Parent = parent});
             EntityManager.SetName(pop, "Pop");
             CreateStorage(pop);

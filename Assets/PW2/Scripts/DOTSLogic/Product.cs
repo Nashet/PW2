@@ -10,6 +10,15 @@ namespace PW2
         industrial,
         consumerProduct
     }
+    
+    public enum Products 
+    {
+        beer,
+        meat,
+        guns,
+        firewood,
+        clothes
+    }
 
     public class Product
     {

@@ -37,22 +37,22 @@ namespace PW2.Scripts.DOTSLogic.Components
     //         set => Has[index] = value;
     //     }
     // }
-    [GenerateAuthoringComponent]
+    
 	[Serializable]
 	public struct ProductionComponent : IComponentData
     {
         //public Storage Storage;
 		public decimal ProductionRate;
-        public decimal Money;
+        //public decimal Money;
 		//public PW2.Product Product;
-        public ProductionType type;
+        public Products type;
 
-        public ProductionComponent(decimal productionRate, ProductionType productType)
+        public ProductionComponent(decimal productionRate, Products productType)
         {
             // Storage = new Storage();
             // ProductionRate = productionRate;
             // ProductType = productType;
-            Money = 0m;
+            //Money = 0m;
             type = productType;
             ProductionRate = productionRate;
         }
