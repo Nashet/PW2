@@ -53,14 +53,14 @@ namespace PW2.Scripts.Services
         {
             var market = new MarketComponent();
             EntityManager.AddComponentData(entity, market);
-            EntityManager.SetComponentData ( entity, market ) ;
-            //CreateStorage(entity);
+            EntityManager.SetComponentData(entity, market);
+            CreateStorage(entity);
         }
 
         private void CreateStorage(Entity entity)
         {
             EntityManager.AddComponentData(entity, new StorageComponent());
-            EntityManager.AddBuffer <StorageElement> ( entity ) ;
+            EntityManager.AddBuffer<StorageElement>(entity);
             // Add some items to storage
             // var items = EntityManager.GetBuffer<StorageElement>(entity);
             // items.Add(new StorageElement("Sword"));
